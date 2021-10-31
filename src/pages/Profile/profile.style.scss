@@ -1,0 +1,60 @@
+@use '../../styles/variables' as vars;
+.profile {
+  &--container {
+    width: 100%;
+  }
+  &--loading {
+    font-size: vars.$font-size-huge;
+  }
+  &--avatar {
+    width: 300px;
+    margin-top: vars.$default-space;
+    animation: vars.$animation-fade-in-down;
+  }
+  &--title {
+    margin: vars.$default-space 0;
+    letter-spacing: 3px;
+    font-size: vars.$font-size-extra-large;
+    text-align: center;
+  }
+  &--details {
+    width: 100%;
+    flex-wrap: wrap;
+    animation: vars.$animation-fade-in-up;
+    li {
+      width: 50%;
+      min-width: 300px;
+      font-size: vars.$font-size-medium;
+      display: flex;
+      letter-spacing: 3px;
+      margin-bottom: vars.$default-space;
+      flex-wrap: wrap;
+      span, div {
+        color: vars.$light-brown;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+.episodes {
+  &--container {
+    padding: vars.$small-space;
+    border:2px solid vars.$light-brown;
+    margin-bottom: vars.$default-space;
+    h2 {
+      text-align: center;
+      font-size: vars.$font-size-medium;
+      letter-spacing: 5px;
+      color: vars.$light-brown;
+      margin-bottom: vars.$small-space;
+    }
+  }
+  &--items {
+    flex-wrap: wrap;
+    li {
+      width: 50%;
+      min-width: 300px; 
+      animation: vars.$animation-fade-in-left;    
+    }
+  }
+}

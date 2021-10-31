@@ -1,0 +1,25 @@
+@use 'variables' as vars;
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    color: inherit;
+    list-style: none;
+}
+
+html {
+    font-size: 16px;
+    font-family: vars.$font-creepster;
+    background-color: vars.$dark-blue;
+    color: vars.$gray;
+}
+
+::selection {
+    background-color: transparent;
+    color: vars.$light-brown;
+}

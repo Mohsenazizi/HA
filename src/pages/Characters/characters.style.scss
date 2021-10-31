@@ -1,0 +1,42 @@
+@use '../../styles/variables' as vars;
+
+.characters { 
+    &--container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: (vars.$small-space + 50px) 0;
+    }
+    &--pagination {   
+        position: fixed;
+        bottom: 0;
+        left: 0;  
+        background-color: vars.$dark-blue; 
+        padding: vars.$small-space;
+        z-index: 2;
+        width: 100%;
+     }
+    &--loading {
+        font-size: vars.$font-size-huge;
+    }
+}
+
+.character {
+    &--container {
+       width: 300px;
+       margin: 0 vars.$small-space;
+       animation: vars.$animation-fade-in-up;
+    }
+    &--name {
+        line-height: vars.$default-line-height;
+        margin:vars.$small-space 0 vars.$large-space 0;
+        letter-spacing: 5px;
+        text-align: center;
+        a:focus {
+            color: vars.$light-brown;
+            outline: 2px solid vars.$light-brown;
+            outline-offset: 5px;
+        }
+    }
+}

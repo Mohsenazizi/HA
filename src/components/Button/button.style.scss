@@ -1,0 +1,27 @@
+@use '../../styles/variables' as vars;
+.btn {
+  border: none;
+  padding: vars.$btn-padding;
+  background-color: vars.$yellow;
+  color: vars.$dark-blue;
+  font-size: vars.$font-size-default;
+  cursor: pointer;
+  &:focus {
+    background-color: vars.$light-brown;
+    outline: 1px solid vars.$light-brown;
+    outline-offset: 3px;
+    border: none;
+  }
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+  &--square {
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,86 @@
+ //layout
+ .flex {
+   display: flex;
+    &--center {
+      align-items: center;
+      justify-content: center;
+    }
+    &--v-center {
+      align-items: center;
+    }
+    &--h-center {
+      justify-content: center;
+    }
+    &--left {
+      justify-content: flex-start;
+    }
+    &--right {
+      justify-content: flex-end;
+    }
+    &--vertical {
+      flex-direction: column;
+    }
+}
+
+.absolute {
+  position: absolute;
+  &--center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+.full {
+  &--width {
+    width: 100%;
+  }
+}
+
+//animations
+@keyframes fadeInUp {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight{
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+

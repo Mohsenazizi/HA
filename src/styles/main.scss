@@ -1,0 +1,21 @@
+@use 'reset';
+@use 'global';
+@use 'variables' as vars;
+
+@font-face {
+    font-family: 'Creepster';
+    src: url('../assets/fonts/Creepster-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Creepster-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    @media screen and (max-width: 700px) {
+        width: 100%;
+        padding: 0 vars.$small-space;
+    }
+}

@@ -1,0 +1,16 @@
+@use '../../styles/variables' as vars;
+
+.error {
+  &--msg {
+    margin-bottom: vars.$small-space;
+    font-size: vars.$font-size-large;
+    text-align: center;
+    letter-spacing: 5px;
+  }
+  &--button {
+    font-size: vars.$font-size-large;
+    path {
+      stroke: vars.$dark-blue
+    }
+  }
+}

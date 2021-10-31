@@ -1,0 +1,21 @@
+@use '../../styles/variables' as vars;
+
+div.episode {
+  &--container {
+    margin: vars.$small-space 0;
+    flex-direction: column;
+    div {
+      margin: vars.$small-space ;
+      line-height: vars.$default-line-height;
+        text-align: center;
+        margin: vars.$small-space 0;
+      span {
+        margin-left: vars.$small-space;
+        color: vars.$light-brown;
+      }
+    }
+    span {
+      letter-spacing: 3px;
+    }
+  }
+}
