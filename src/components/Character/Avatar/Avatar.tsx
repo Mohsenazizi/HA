@@ -22,7 +22,7 @@ const Avatar: FC<AvatarPropTypes> = ({
             {!url ? 
             (
             <h2 
-             className='avatar--content'
+             className='avatar__content'
             >
                 {getNameInitial(name)}
             </h2>

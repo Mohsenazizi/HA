@@ -1,7 +1,7 @@
 @use '../../styles/variables' as vars;
 
 div.episode {
-  &--container {
+  &__container {
     margin: vars.$small-space 0;
     flex-direction: column;
     div {

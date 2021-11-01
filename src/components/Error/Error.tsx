@@ -13,12 +13,12 @@ const Error: FC<ErrorProps> = ({
   refetch
 }) => {
   return (
-    <div className='flex flex--vertical flex--v-center error--container'>
-      <div className='error--msg'>
+    <div className='flex flex__vertical flex__v-center error__container'>
+      <div className='error__msg'>
         {msg ? msg : 'Something Went Wrong...'}
       </div> 
       <Button
-        customClassNames='error--button'
+        customClassNames='error__button'
         onClick={refetch}
         square={true}
       >

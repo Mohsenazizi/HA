@@ -1,6 +1,6 @@
 @use '../../styles/variables' as vars;
 .not-found {
-  &--container {
+  &__container {
     font-size: vars.$font-size-huge;
     text-align: center;
   }

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import { GrFormRefresh } from 'react-icons/gr';
 import { BsCheckLg } from 'react-icons/bs';
 import { Button, Loading } from '../../components';
@@ -9,16 +9,19 @@ import './episode.style.scss';
    url: string;
 }
 const Episode: FC<EpisodeProps> = ({ url }) => {
-
   const { data, isLoading, isError, refetchEpisode, error } = useEpisode(url);
+  const onRefetchClick = useCallback(() => {
+    refetchEpisode();
+  }, [refetchEpisode]);
+
   return (
-    <div className='episode--container flex flex--v-center full--width'>
+    <div className='episode__container flex flex__v-center full__width'>
       {
         isLoading ? (<Loading /> ) :
           isError ? (
             <Button
               square={true}
-              onClick={() => refetchEpisode()}>
+              onClick={onRefetchClick}>
               <GrFormRefresh />
              { error?.data?.error && 'Some Thing Went Wrong...' }
             </Button>) : (

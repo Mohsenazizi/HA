@@ -13,83 +13,80 @@ const Profile: FC = () => {
 
     if (isLoading) {
         return (
-            <div className='profile--loading absolute absolute--center'>
-            <Loading/>
-        </div>
-        )
+            <div className='profile__loading absolute absolute__center'>
+                <Loading/>
+            </div>
+        );
     }
 
     if (isError) {
         return (
-            <div className='absolute absolute--center'>
+            <div className='absolute absolute__center'>
                 <Error
                     refetch={refetchProfile}
                     msg={error?.data?.error}
                 />
-        </div>
+            </div>
         )
     }
 
     return (
-        <section className='profile--container flex flex--vertical'>
-            <div className='flex flex--v-center flex--vertical full--width'>
-                <div className='profile--avatar flex flex--vertical flex--v-center'>
+        <section className='profile__container flex flex__vertical'>
+            <div className='flex flex__v-center flex__vertical full__width'>
+                <div className='profile__avatar flex flex__vertical flex__v-center'>
                 <Avatar url={data?.image!} name={data?.name!} />
                 </div>
-                <h2 className='profile--title'>
+                <h2 className='profile__title'>
                     {data?.name}
                 </h2>
             </div>
-                <ul className='profile--details flex'>
-                <li>
-                    <span>
-                        Status: 
-                    </span>
-                    {data?.status}
-                </li>
-                <li>
-                    <span>
-                        Gender: 
-                    </span>
-                    {data?.gender}
-                </li>   
-                <li>
-                    <span>
-                        SPECIES: 
-                    </span>
-                    {data?.species}
-                </li>
-                <li>
-                    <span>
-                        Location:
-                    </span>
-                    {data?.location?.name}
-                </li>
-                <li>
-                    <span>
-                        Origin:
-                    </span>
-                    {data?.origin?.name}
-                </li> 
+                <ul className='profile__details flex'>
+                    <li>
+                        <span>
+                            Status: 
+                        </span>
+                        {data?.status}
+                    </li>
+                    <li>
+                        <span>
+                            Gender: 
+                        </span>
+                        {data?.gender}
+                    </li>   
+                    <li>
+                        <span>
+                            SPECIES: 
+                        </span>
+                        {data?.species}
+                    </li>
+                    <li>
+                        <span>
+                            Location:
+                        </span>
+                        {data?.location?.name}
+                    </li>
+                    <li>
+                        <span>
+                            Origin:
+                        </span>
+                        {data?.origin?.name}
+                    </li> 
                 </ul>
-   
-            <div className='episodes--container flex flex--h-center flex--vertical full--width'>
+            <div className='episodes__container flex flex__h-center flex__vertical full__width'>
                 <h2>
                     Episodes:
                 </h2>
-                <ul className='episodes--items full--width flex'>
-                    {
-                    data?.episode?.map((url: string, index: number) => (
+                <ul className='episodes__items full__width flex'>
+                    {data?.episode?.map((url, index) => (
                         <li
                             key={url}
                             style={{
                                 animationDelay: `${index * 100}ms`
                             }}
                         >
-                        <Episode url={url} />
+                            <Episode url={url} />
                        </li>
-                    ))
-                    }
+                    ))}
                 </ul>
             </div>
         </section>

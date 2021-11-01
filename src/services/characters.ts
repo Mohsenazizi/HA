@@ -1,10 +1,11 @@
 import request from './request';
-import { CharactersType, Error } from '../types';
+import { CharactersType } from '../types';
 
 export const getCharacters = (page: string) => (
   request.get<CharactersType>(`/character`, { page })
     .then((response) => {
-      if (response.status === 404) {
+      console.log(response)
+      if (response.status >= 400) {
           return Promise.reject(response?.data)
       }
       return response.data;

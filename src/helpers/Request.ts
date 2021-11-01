@@ -16,19 +16,19 @@ export  class Request {
         this.config = config;
     }
     
-     async makeRequest<T>(endpoint?: string, options?: any): Promise<RequestResultType<T>> {   
-       
-
+     async makeRequest<T>(
+            endpoint?: string,
+            options?: RequestInit
+        ): Promise<RequestResultType<T>> {
         const response: Response = await fetch(`${this.baseUrl }${endpoint?endpoint:''}`, options);
         const result: RequestResultType<T> = {
             headers: response.headers,
             status: response.status,
             data: null
         };
-            console.log(response.headers.get('content-type'))
-        if (response.headers.get('content-type')?.includes('json')) {
-            const json: T = await response.json();
-            result.data = json;
+         
+        if (response.headers.get('content-type')?.startsWith('application/json')) {
+            result.data = await response.json();
         } else {
             result.data = response.body;
         }
@@ -38,16 +38,16 @@ export  class Request {
         }
 
         return Promise.reject(result);
-    } 
-    
-     createBody(body: object) {
+    }
+ 
+    createBody(body: Record<string|number, any>) {
         if (typeof body === 'object' && body !== null) {
             return JSON.stringify(body)
-        } 
+        }
         return body;
-    }
+    } 
 
-    get<T>(endpoint?: string, params?: { [key: string | number]: string }) {
+    get<T>(endpoint?: string, params?: Record<string|number, string>) {
         let path = endpoint;
 
         if (params) {

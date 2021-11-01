@@ -6,11 +6,19 @@ import useCharacters from './useCharacters';
 import './characters.style.scss';
 
 const Characters: FC = () => {
-    const { isLoading, isError, data, nextHandler, prevHandler, page, refetchCharacters, error } = useCharacters();
-    
+    const { isLoading,
+            isError,
+            data,
+            nextHandler,
+            prevHandler,
+            page,
+            refetchCharacters,
+            error,
+    } = useCharacters();
+console.log(data)
     if (isLoading) {
         return (
-            <div className='characters--loading absolute absolute--center'>
+            <div className='characters__loading absolute absolute__center'>
                 <Loading/>
             </div>
             )
@@ -18,7 +26,7 @@ const Characters: FC = () => {
     
     if (isError) {
         return (
-            <div className='characters--loading absolute absolute--center'>
+            <div className='characters__loading absolute absolute__center'>
                 <Error
                     refetch={refetchCharacters}
                     msg={ error?.data?.error }
@@ -29,7 +37,7 @@ const Characters: FC = () => {
      
     return (
         <>
-            <div className='characters--pagination flex flex--right'>
+            <div className='characters__pagination flex flex__right' data-testId='x'>
                 <Pagination
                     nextHandler={nextHandler}
                     prevHandler={prevHandler}
@@ -37,22 +45,28 @@ const Characters: FC = () => {
                     pagesCount={data?.info?.pages}
                 />
             </div>
-            <section className='characters--container'>
+            <section className='characters__container'>
                 {
-                data?.results?.map((character: CharacterType, index: number) => (
+                    data?.results?.map((character: CharacterType, index: number) => {
+                        console.log(character)
+                        
+                        return (
                     <div
                         key={character.id}
-                        className='character--container'
+                        className='character__container'
                         style={{
                             animationDelay: `${100 * index}ms`
                         }}
+                        data-testId='char'
                     >
                             <Avatar name={character.name} url={character.image}/>
-                            <h2 className='character--name'>
-                            <Link to={`characters/${character.id}`}> {character.name} </Link>
+                            <h2 className='character__name'>
+                            <Link to={`characters/${character.id}`}>
+                                {character.name}
+                            </Link>
                             </h2>
                     </div>
-                    ))
+                    )})
                 }
                 </section>
     </>

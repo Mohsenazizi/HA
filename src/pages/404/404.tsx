@@ -4,7 +4,7 @@ import { AiFillHome } from 'react-icons/ai';
 
 const NotFound = () => {
   return (
-    <div className='absolute absolute--center flex flex--vertical flex--v-center not-found--container'>
+    <div className='absolute absolute__center flex flex__vertical flex__v-center not-found__container'>
       This Page does Not Exist!!!
       <div>
       <Link to='/'>

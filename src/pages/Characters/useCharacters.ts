@@ -23,7 +23,7 @@ const useCharacters = () => {
       })     
     } else {
       history.push({
-        search:``
+        search: ''
       }) 
     }
   }, [page])
@@ -33,23 +33,31 @@ const useCharacters = () => {
     return getCharacters(page.toString())
   }, []);
 
-  const { isLoading, isError, data, refetch: refetchCharacters, error } = useQuery<Promise<ResponseResultType<CharactersType>>, Error, CharactersType, (string | number)[]>(['characters', page], () => getCharactersQueryFn(page), {
-    retry: false
-  });
+  const {
+    isLoading,
+    isError,
+    data,
+    refetch: refetchCharacters,
+    error,
+  } = useQuery<Promise<ResponseResultType<CharactersType>>, Error, CharactersType, (string | number)[]>(
+      ['characters', page],
+      () => getCharactersQueryFn(page),
+      { retry: false },
+    );
 
   const nextHandler = useCallback(() => {
     if (!data?.info?.next) {
       return;
     }
   
-    setPage((currentPage) => ++currentPage)
+    setPage((currentPage) => currentPage + 1)
   }, [data])
 
   const prevHandler = useCallback(() => {
     if (!data?.info?.prev) {
       return;
     }
-    setPage((currentPage) => --currentPage)
+    setPage((currentPage) => currentPage - 1)
   }, [data])
 
   return {

@@ -1,16 +1,16 @@
 @use '../../styles/variables' as vars;
 
 .pagination {
-  &--container {
+  &__container {
     display: flex;
     color: inherit;
   }
-  &--button {
+  &__button {
     font-size: vars.$font-size-large;
     path {
       stroke: vars.$dark-blue;
     }
-    &__prev {
+    &--prev {
       margin-right: vars.$extra-small-space;
     }
   }

@@ -15,18 +15,18 @@ const Pagination: FC<PaginationProps> = (
     nextHandler,
     currentPage,
     pagesCount = 1 }) => (
-        <div className='pagination--container'>
+        <div className='pagination__container'>
           <Button
             square={true}
             disabled={currentPage === 1}
-            customClassNames='pagination--button pagination--button__prev'
+            customClassNames='pagination__button pagination__button--prev'
             onClick={prevHandler}
             >
           <GrFormPreviousLink/>
           </Button>
           <Button
             square={true}
-            disabled={currentPage === pagesCount} customClassNames='pagination--button pagination--button__next'
+            disabled={currentPage === pagesCount} customClassNames='pagination__button pagination__button--next'
             onClick={nextHandler}
             >
             <GrFormNextLink/>

@@ -1,30 +1,30 @@
  //layout
  .flex {
    display: flex;
-    &--center {
+    &__center {
       align-items: center;
       justify-content: center;
     }
-    &--v-center {
+    &__v-center {
       align-items: center;
     }
-    &--h-center {
+    &__h-center {
       justify-content: center;
     }
-    &--left {
+    &__left {
       justify-content: flex-start;
     }
-    &--right {
+    &__right {
       justify-content: flex-end;
     }
-    &--vertical {
+    &__vertical {
       flex-direction: column;
     }
 }
 
 .absolute {
   position: absolute;
-  &--center {
+  &__center {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
@@ -32,7 +32,7 @@
 }
 
 .full {
-  &--width {
+  &__width {
     width: 100%;
   }
 }

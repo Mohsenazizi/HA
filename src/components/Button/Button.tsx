@@ -13,7 +13,7 @@ const Button: FC<ButtonProps> = (
     }) => (
        <button
             {...props}
-            className={`btn ${customClassNames ? customClassNames: ''} ${square ? 'btn--square' : ''}`}
+            className={`btn ${customClassNames ? customClassNames: ''} ${square ? 'btn__square' : ''}`}
        >
         {children}
        </button> 

@@ -1,23 +1,23 @@
 @use '../../styles/variables' as vars;
 .profile {
-  &--container {
+  &__container {
     width: 100%;
   }
-  &--loading {
+  &__loading {
     font-size: vars.$font-size-huge;
   }
-  &--avatar {
+  &__avatar {
     width: 300px;
     margin-top: vars.$default-space;
     animation: vars.$animation-fade-in-down;
   }
-  &--title {
+  &__title {
     margin: vars.$default-space 0;
     letter-spacing: 3px;
     font-size: vars.$font-size-extra-large;
     text-align: center;
   }
-  &--details {
+  &__details {
     width: 100%;
     flex-wrap: wrap;
     animation: vars.$animation-fade-in-up;
@@ -37,7 +37,7 @@
   }
 }
 .episodes {
-  &--container {
+  &__container {
     padding: vars.$small-space;
     border:2px solid vars.$light-brown;
     margin-bottom: vars.$default-space;
@@ -49,7 +49,7 @@
       margin-bottom: vars.$small-space;
     }
   }
-  &--items {
+  &__items {
     flex-wrap: wrap;
     li {
       width: 50%;
