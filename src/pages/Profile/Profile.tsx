@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useParams } from "react-router";
 import { Avatar, Episode, Loading, Error } from '../../components';
-import useCharacter from './useProfile';
+import useProfile from './useProfile';
 import './profile.style.scss';
 type paramsTypes = {
     id: string
@@ -9,7 +9,7 @@ type paramsTypes = {
 
 const Profile: FC = () => {
     const { id }: paramsTypes = useParams();
-    const { data, isLoading, isError, error, refetchProfile } = useCharacter(id);
+    const { data, isLoading, isError, error, refetchProfile } = useProfile(id);
 
     if (isLoading) {
         return (

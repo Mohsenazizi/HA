@@ -1,11 +1,8 @@
-import { useCallback } from 'react';
 import { useQuery } from 'react-query';
 import { ResponseResultType } from '../../helpers';
 import { getCharacter } from '../../services';
 import { CharacterType, Error} from '../../types';
-
-const useCharacter = (id: string) => {
-
+const useProfile = (id: string) => {
   const { isLoading, isError, data , error, refetch: refetchProfile } = useQuery<Promise<ResponseResultType<CharacterType>>, Error, CharacterType, (string | number)[]>(['character', id], ()=> getCharacter(id), {
     retry: false
   });
@@ -19,4 +16,4 @@ const useCharacter = (id: string) => {
   }
 }
 
-export default useCharacter;
+export default useProfile;

@@ -4,7 +4,6 @@ import { CharactersType } from '../types';
 export const getCharacters = (page: string) => (
   request.get<CharactersType>(`/character`, { page })
     .then((response) => {
-      console.log(response)
       if (response.status >= 400) {
           return Promise.reject(response?.data)
       }
